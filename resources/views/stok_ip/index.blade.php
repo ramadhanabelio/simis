@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <h1>Daftar Stok IP</h1>
         <a href="{{ route('stok_ip.create') }}" class="btn btn-primary">Tambah Stok IP</a>
 
