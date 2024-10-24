@@ -7,9 +7,9 @@
             <a href="{{ route('alat.create') }}" class="btn btn-success">Tambah Alat</a>
         </div>
 
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                {{ $message }}
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
             </div>
         @endif
 

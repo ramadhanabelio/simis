@@ -25,6 +25,8 @@ class StokIpController extends Controller
         $request->validate([
             'poli' => 'required',
             'ip_address' => 'required|ip',
+        ], [
+            'ip_address.ip' => 'IP Address yang dimasukkan tidak valid.'
         ]);
 
         StokIp::create($request->all());
@@ -43,16 +45,19 @@ class StokIpController extends Controller
         $request->validate([
             'poli' => 'required',
             'ip_address' => 'required|ip',
+        ], [
+            'ip_address.ip' => 'IP Address yang dimasukkan tidak valid.'
         ]);
 
         $stokIp->update($request->all());
 
-        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil diperbarui');
+        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil diperbarui.');
     }
 
     public function destroy(StokIp $stokIp)
     {
         $stokIp->delete();
-        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil dihapus');
+
+        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil dihapus.');
     }
 }
