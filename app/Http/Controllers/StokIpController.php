@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StokIp;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 class StokIpController extends Controller
 {
@@ -29,7 +29,7 @@ class StokIpController extends Controller
 
         StokIp::create($request->all());
 
-        return redirect()->route('stok_ip.index')->with('success', 'Data Stok IP berhasil ditambahkan');
+        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil ditambahkan');
     }
 
     public function edit(StokIp $stokIp)
@@ -47,12 +47,12 @@ class StokIpController extends Controller
 
         $stokIp->update($request->all());
 
-        return redirect()->route('stok_ip.index')->with('success', 'Data Stok IP berhasil diperbarui');
+        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil diperbarui');
     }
 
     public function destroy(StokIp $stokIp)
     {
         $stokIp->delete();
-        return redirect()->route('stok_ip.index')->with('success', 'Data Stok IP berhasil dihapus');
+        return redirect()->route('stok_ip.index')->with('success', 'Stok IP berhasil dihapus');
     }
 }

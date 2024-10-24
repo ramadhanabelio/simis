@@ -2,8 +2,10 @@
 
 @section('content')
     <div class="container mt-4">
-        <h1>Daftar Stok IP</h1>
-        <a href="{{ route('stok_ip.create') }}" class="btn btn-primary">Tambah Stok IP</a>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>Daftar Stok IP</h3>
+            <a href="{{ route('stok_ip.create') }}" class="btn btn-success">Tambah Stok IP</a>
+        </div>
 
         @if (session('success'))
             <div class="alert alert-success mt-3">
@@ -28,12 +30,11 @@
                         <td>{{ $stokIp->ip_address }}</td>
                         <td>
                             <a href="{{ route('stok_ip.edit', $stokIp->id) }}" class="btn btn-warning btn-sm">Edit</a>
-
                             <form action="{{ route('stok_ip.destroy', $stokIp->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
                             </form>
                         </td>
                     </tr>

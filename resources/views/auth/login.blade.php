@@ -16,7 +16,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <h2 class="text-center mt-5">Sistem Inventaris Divisi MIS</h2>
+                <h2 class="text-center mt-5 mb-3">Sistem Inventaris Divisi MIS</h2>
+                @if ($errors->any())
+                    <div class="alert alert-danger text-center">{{ $errors->first() }}</div>
+                @endif
                 <form action="{{ route('login.post') }}" method="POST">
                     @csrf
                     <div class="mb-3">
@@ -27,9 +30,6 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    @if ($errors->any())
-                        <div class="alert alert-danger">{{ $errors->first() }}</div>
-                    @endif
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
             </div>

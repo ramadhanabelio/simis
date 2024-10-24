@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-4">
-        <h1>Edit Stok IP</h1>
+        <h3>Edit Stok IP</h3>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -18,8 +18,8 @@
             @csrf
             @method('PUT')
 
-            <div class="form-group">
-                <label for="poli">Pilih Poli</label>
+            <div class="mb-3">
+                <label for="poli" class="form-label">Pilih Poli</label>
                 <select name="poli" class="form-control" required>
                     <option value="">--Pilih Poli--</option>
                     @foreach ($polis as $poli)
@@ -29,8 +29,8 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="ip_address">IP Address</label>
+            <div class="mb-3">
+                <label for="ip_address" class="form-label">IP Address</label>
                 <input type="text" name="ip_address" class="form-control" value="{{ $stokIp->ip_address }}" required>
             </div>
 

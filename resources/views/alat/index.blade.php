@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="container mt-4">
-        <h1>Daftar Alat dan Barang</h1>
-
-        <a href="{{ route('alat.create') }}" class="btn btn-primary mb-3">Tambah Alat</a>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>Daftar Alat dan Barang</h3>
+            <a href="{{ route('alat.create') }}" class="btn btn-success">Tambah Alat</a>
+        </div>
 
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -39,7 +40,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus alat ini?')">Hapus</button>
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
                             </form>
                         </td>
                     </tr>
