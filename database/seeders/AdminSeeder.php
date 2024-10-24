@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 
 class AdminSeeder extends Seeder
 {
@@ -15,6 +15,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
+            'id' => Str::uuid(),
             'name' => 'Admin MIS RSUD Bengkalis',
             'username' => 'admin-mis',
             'password' => Hash::make('password_mis'),
