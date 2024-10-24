@@ -11,7 +11,7 @@
             </div>
         @endif
 
-        <table class="table table-bordered mt-3">
+        <table id="misTable" class="table table-striped">
             <thead>
                 <tr>
                     <th>No</th>

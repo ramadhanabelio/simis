@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <table class="table table-bordered">
+        <table id="misTable" class="table table-striped">
             <thead>
                 <tr>
                     <th>No</th>
