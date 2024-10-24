@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('logo.webp') }}" alt="Logo RSUD Bengkalis" width="30"
+                <img src="{{ asset('img/logo.webp') }}" alt="Logo RSUD Bengkalis" width="30"
                     class="d-inline-block align-text-top">
                 &nbsp; Sistem Inventaris MIS
             </a>
@@ -97,11 +97,7 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
     {{-- My JS --}}
-    <script>
-        $(document).ready(function() {
-            $("#misTable").DataTable();
-        });
-    </script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
