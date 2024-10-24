@@ -16,18 +16,15 @@ use App\Http\Controllers\StokIpController;
 |
 */
 
-// Authentication Routes
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Dashboard Route
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard')->middleware('auth:admin');
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-// Alat Routes
-Route::resource('alat', AlatController::class)->middleware('auth:admin');
-
-// Stok IP Routes
-Route::resource('stok_ip', StokIpController::class)->middleware('auth:admin');
+    Route::resource('alat', AlatController::class);
+    Route::resource('stok_ip', StokIpController::class);
+});
