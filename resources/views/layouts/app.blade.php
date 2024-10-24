@@ -12,6 +12,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     {{-- CSS DataTables --}}
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    {{-- Icon Bootstrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -31,22 +33,55 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('dashboard') }}">Beranda</a>
+                        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
+                            href="{{ route('dashboard') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('alat.index') }}">Alat dan Barang</a>
+                        <a class="nav-link {{ request()->routeIs('alat.index') ? 'active' : '' }}"
+                            href="{{ route('alat.index') }}">Alat dan Barang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('stok_ip.index') }}">Stok IP</a>
+                        <a class="nav-link {{ request()->routeIs('stok_ip.index') ? 'active' : '' }}"
+                            href="{{ route('stok_ip.index') }}">Stok IP</a>
+                    </li>
+                    <!-- Dropdown for Logout -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Admin MIS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#logoutModal">Keluar</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-flex">
-                    @csrf
-                    <button class="btn btn-danger" type="submit">Keluar</button>
-                </form>
             </div>
         </div>
     </nav>
+
+    <!-- Modal Logout Confirmation -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Keluar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda yakin ingin keluar?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <button type="button" class="btn btn-danger"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container mt-4">
         @yield('content')
