@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <h1>Selamat datang, Admin MIS</h1>
         <div class="row mt-4">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="card text-white bg-success shadow" style="border-radius: 15px;">
                     <div class="card-header text-center">
                         <h4>Total Alat</h4>
