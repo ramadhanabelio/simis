@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <h2 class="text-center mt-5">Login Admin</h2>
+                <h2 class="text-center mt-5">Sistem Inventaris Divisi MIS</h2>
                 <form action="{{ route('login.post') }}" method="POST">
                     @csrf
                     <div class="mb-3">
