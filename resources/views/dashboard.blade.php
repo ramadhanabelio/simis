@@ -24,7 +24,7 @@
                     <div class="card-body text-center">
                         <h1 class="card-title display-4">{{ $totalStokIp }}</h1>
                         <p class="card-text">Jumlah total stok IP yang terdaftar.</p>
-                        <i class="bi bi-box-seam" style="font-size: 50px;"></i>
+                        <i class="bi bi-hdd-network" style="font-size: 50px;"></i>
                     </div>
                 </div>
             </div>
