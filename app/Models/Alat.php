@@ -11,11 +11,11 @@ class Alat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
         'jenis_alat',
         'tanggal_pengadaan',
         'merk',
-        'stok'
+        'stok',
+        'harga',
     ];
 
     public $incrementing = false;

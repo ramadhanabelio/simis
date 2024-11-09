@@ -23,6 +23,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth:admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('alat', AlatController::class);
+    Route::resource('alat', AlatController::class)->except(['show']);
+    Route::get('/alat/print', [AlatController::class, 'print'])->name('alat.print');
     Route::resource('stok_ip', StokIpController::class);
 });

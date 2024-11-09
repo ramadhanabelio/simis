@@ -4,13 +4,17 @@
     <div class="container mt-4">
         <h3 class="mb-4">Edit Alat</h3>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
+            </div>
+        @endif
+
         <form action="{{ route('alat.update', $alat->id) }}" method="POST">
             @csrf
             @method('PUT')
-            <div class="mb-3">
-                <label for="nama" class="form-label">Nama Alat</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="{{ $alat->nama }}" required>
-            </div>
 
             <div class="mb-3">
                 <label for="jenis_alat" class="form-label">Jenis Alat</label>
@@ -31,6 +35,12 @@
                 <label for="merk" class="form-label">Merk</label>
                 <input type="text" class="form-control" id="merk" name="merk" value="{{ $alat->merk }}"
                     required>
+            </div>
+
+            <div class="mb-3">
+                <label for="harga" class="form-label">Harga</label>
+                <input type="number" name="harga" id="harga" class="form-control" value="{{ $alat->harga }}"
+                    step="0.01" required>
             </div>
 
             <div class="mb-3">

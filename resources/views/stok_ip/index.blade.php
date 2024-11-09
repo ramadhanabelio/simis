@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3>Daftar Stok IP</h3>
-            <a href="{{ route('stok_ip.create') }}" class="btn btn-success">Tambah Stok IP</a>
+            <a href="{{ route('stok_ip.create') }}" class="btn btn-success">+ Tambah Stok IP</a>
         </div>
 
         @if (session('success'))
@@ -16,7 +16,7 @@
         <table id="misTable" class="table table-striped">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>No.</th>
                     <th>Poli</th>
                     <th>IP Address</th>
                     <th>Aksi</th>
@@ -25,7 +25,7 @@
             <tbody>
                 @foreach ($stokIps as $stokIp)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $loop->iteration }}.</td>
                         <td>{{ $stokIp->poli }}</td>
                         <td>{{ $stokIp->ip_address }}</td>
                         <td>
