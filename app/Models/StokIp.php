@@ -10,7 +10,10 @@ class StokIp extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['poli', 'ip_address'];
+    protected $fillable = [
+        'poli',
+        'ip_address'
+    ];
 
     public $incrementing = false;
     protected $keyType = 'uuid';
