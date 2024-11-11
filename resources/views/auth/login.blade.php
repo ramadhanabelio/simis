@@ -17,18 +17,20 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center mt-5 pt-5">
-            <div class="col-md-4">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <div class="container text-center">
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="card shadow border-0" style="max-width: 800px; width: 100%;">
+            <div class="row g-0">
+                <!-- Bagian Form -->
+                <div class="col-md-6">
+                    <div class="card-body m-3">
+                        <div class="text-center">
                             <img src="{{ asset('img/logo.webp') }}" alt="Logo" class="mt-3 mb-3"
                                 style="width: 25%;">
                         </div>
-                        <h3 class=" text-center mb-4">Sistem Inventaris Divisi MIS</h3>
+                        <h4 class="text-center mb-2">Sistem Inventaris </h4>
+                        <h6 class="text-center text-muted mb-4">DIVISI MIS</h6>
                         @if ($errors->any())
-                            <div class="alert alert-danger">{{ $errors->first() }}</div>
+                            <div class="alert alert-danger text-center fw-bold">{{ $errors->first() }}</div>
                         @endif
                         <form action="{{ route('login.post') }}" method="POST">
                             @csrf
@@ -44,8 +46,15 @@
                                     <i class="bi bi-eye" id="eyeIcon"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">MASUK</button>
+                            <button type="submit" class="btn btn-success w-100">Masuk</button>
                         </form>
+                    </div>
+                </div>
+
+                <!-- Bagian Gambar -->
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="h-100 w-100"
+                        style="background-image: url('{{ asset('img/background.jpg') }}'); background-size: cover; background-position: center;">
                     </div>
                 </div>
             </div>
