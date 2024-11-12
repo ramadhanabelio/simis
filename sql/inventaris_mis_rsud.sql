@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2024 at 12:52 AM
+-- Generation Time: Nov 12, 2024 at 05:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -51,14 +51,24 @@ INSERT INTO `admins` (`id`, `name`, `username`, `password`, `created_at`, `updat
 
 CREATE TABLE `alats` (
   `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_alat` enum('LAN','Printer','PC') COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_pengadaan` date NOT NULL,
   `merk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` decimal(10,2) NOT NULL,
   `stok` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `alats`
+--
+
+INSERT INTO `alats` (`id`, `jenis_alat`, `tanggal_pengadaan`, `merk`, `harga`, `stok`, `created_at`, `updated_at`) VALUES
+('1d14d838-e5ff-4867-8166-c54ac311cb03', 'LAN', '2024-10-30', 'NYK', 60000.00, 300, '2024-11-11 20:33:15', '2024-11-11 20:39:09'),
+('260bc0e9-65eb-4a4c-a0cc-6bf9fae0cfe4', 'LAN', '2024-10-27', 'CAT5e', 350000.00, 40, '2024-11-11 20:36:50', '2024-11-11 20:36:50'),
+('2c64628d-3b83-452f-a46b-d52291406553', 'Printer', '2024-11-13', 'Canon', 1200000.00, 5, '2024-11-11 20:33:44', '2024-11-11 20:33:44'),
+('58370fba-ce90-49ab-83bf-20149129b0e4', 'PC', '2024-10-29', 'ROG', 2000000.00, 10, '2024-11-11 20:34:58', '2024-11-11 20:34:58');
 
 -- --------------------------------------------------------
 
@@ -103,7 +113,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2024_10_24_201211_create_stok_ips_table', 3),
 (9, '2024_10_24_210944_update_admins_table_to_uuid', 4),
 (10, '2024_10_24_211010_update_alats_table_to_uuid', 5),
-(11, '2024_10_24_211028_update_stok_ips_table_to_uuid', 5);
+(11, '2024_10_24_211028_update_stok_ips_table_to_uuid', 5),
+(12, '2024_11_09_164955_update_alats_table', 6);
 
 -- --------------------------------------------------------
 
@@ -149,6 +160,16 @@ CREATE TABLE `stok_ips` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `stok_ips`
+--
+
+INSERT INTO `stok_ips` (`id`, `poli`, `ip_address`, `created_at`, `updated_at`) VALUES
+('100d8cf5-0098-4112-adb6-95833980ad51', 'Umum', '192.168.111.1', '2024-11-11 20:52:27', '2024-11-11 20:52:27'),
+('1f3f04fa-8314-488f-ab48-6d9ae830ad42', 'THT', '192.168.1.3', '2024-11-11 20:52:36', '2024-11-11 20:52:36'),
+('542343be-7636-49ca-82f5-203e37381abb', 'Mata', '192.168.1.1', '2024-11-11 20:52:09', '2024-11-11 20:52:09'),
+('fbffac6b-daaf-4a2f-9a06-a9c96f8af376', 'Gigi', '192.168.1.2', '2024-11-11 20:52:18', '2024-11-11 20:52:18');
 
 -- --------------------------------------------------------
 
@@ -238,7 +259,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

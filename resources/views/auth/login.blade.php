@@ -28,7 +28,7 @@
                                 style="width: 25%;">
                         </div>
                         <h4 class="text-center mb-2">Sistem Inventaris </h4>
-                        <h6 class="text-center text-muted mb-4">DIVISI MIS</h6>
+                        <h6 class="text-center text-muted mb-4">Divisi MIS</h6>
                         @if ($errors->any())
                             <div class="alert alert-danger text-center fw-bold">{{ $errors->first() }}</div>
                         @endif
@@ -36,17 +36,19 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="username" class="form-label fw-medium">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Masukkan username" required>
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="password" class="form-label fw-medium">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Masukkan password" required>
                                 <button type="button" id="togglePassword" class="position-absolute"
                                     style="right: 10px; top: 38px; border: none; background: none;">
                                     <i class="bi bi-eye" id="eyeIcon"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="btn btn-success w-100">Masuk</button>
+                            <button type="submit" class="btn btn-success rounded-0 w-100">Masuk</button>
                         </form>
                     </div>
                 </div>

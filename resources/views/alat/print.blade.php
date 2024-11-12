@@ -99,10 +99,10 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
                 <th>Jenis Alat</th>
                 <th>Tanggal Pengadaan</th>
                 <th>Merk</th>
+                <th>Harga</th>
                 <th>Stok</th>
             </tr>
         </thead>
@@ -110,10 +110,10 @@
             @foreach ($alats as $alat)
                 <tr>
                     <td>{{ $loop->iteration }}.</td>
-                    <td>{{ $alat->nama }}</td>
                     <td>{{ $alat->jenis_alat }}</td>
                     <td>{{ $alat->tanggal_pengadaan }}</td>
                     <td>{{ $alat->merk }}</td>
+                    <td>{{ $alat->harga }}</td>
                     <td>{{ $alat->stok }}</td>
                 </tr>
             @endforeach

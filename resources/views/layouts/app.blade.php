@@ -52,7 +52,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#logoutModal">Keluar</a></li>
+                                    data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right"></i> &nbsp;
+                                    Keluar</a></li>
                         </ul>
                     </li>
                 </ul>
