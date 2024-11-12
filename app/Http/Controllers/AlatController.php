@@ -66,6 +66,6 @@ class AlatController extends Controller
     {
         $alats = Alat::all();
         $pdf = Pdf::loadView('alat.print', compact('alats'));
-        return $pdf->download('daftar_alat.pdf');
+        return $pdf->download('Daftar Alat.pdf');
     }
 }
