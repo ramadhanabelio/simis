@@ -46,6 +46,26 @@
                                 <button type="submit" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
                             </form>
+                            {{-- <div class="dropdown">
+                                <a href="#" role="button" id="aksiDropdown{{ $alat->id }}"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    style="color: black; text-decoration: none;">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="aksiDropdown{{ $alat->id }}">
+                                    <li>
+                                        <a href="{{ route('alat.edit', $alat->id) }}" class="dropdown-item">Edit</a>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('alat.destroy', $alat->id) }}" method="POST"
+                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item">Hapus</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div> --}}
                         </td>
                     </tr>
                 @endforeach
