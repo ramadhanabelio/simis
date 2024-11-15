@@ -23,3 +23,5 @@ Interesting features of SIMIS:
 2. **CRUD Data** : Can add, view, change, search and delete equipment and goods procurement data made at Bengkalis Regional Hospital which can be exported into a report in PDF form and record a list of IPs available at Bengkalis Regional Hospital.
 
 3. **Print PDF** : Can print PDF files for tool and item data
+
+4. **UUID** : Each equipment and goods procurement data entry is equipped with a UUID (Universal Unique Identifier). This UUID functions as a unique identifier to ensure that each data has no conflicts or duplications, especially during the data import/export process or integration with other systems.
