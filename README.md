@@ -26,7 +26,7 @@ Interesting features of SIMIS:
 
 4. **UUID**: Each equipment and goods procurement data entry is equipped with a UUID (Universal Unique Identifier). This UUID functions as a unique identifier to ensure that each data has no conflicts or duplications, especially during the data import/export process or integration with other systems.
 
-## Laravel Project Installation Guide
+## 🛠️ Project Installation Guide
 
 Following are the steps to install a Laravel project:
 
