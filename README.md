@@ -45,7 +45,7 @@ git clone https://github.com/ramadhanabelio/simis.git
 **2.** Go to the project directory:
 
 ```bash
-simis cd
+cd simis
 ```
 
 **3.** Install JavaScript dependencies using npm:
