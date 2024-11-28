@@ -1,6 +1,6 @@
-<div id="start-of-content" align="center">
+<div align="center">
 
-<img width="" src="public/img/logo.webp"  width=120 height=120  align="center">
+<img src="public/img/logo.webp"  width=120 height=120  align="center">
 
 ##
 
@@ -71,7 +71,7 @@ mv .env.example .env
 **Windows:**
 
 ```bash
-ren .env.example .env
+cp .env.example .env
 ```
 
 **6.** Create a database with a name according to your project, for example "simis", and configure the .env file to set the database name:
